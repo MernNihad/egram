@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="AHLBYT" />
+    <meta name="description" content="AHLBYT">
+    <meta name="keywords" content="sites,official pages,">
+    <meta name="author" content="Muhammad Nihad O T">
+    {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/stylesheets/userStyleUI.css">
+    <link rel="stylesheet" href="/stylesheets/adminStyleUI.css">
+    <link rel="stylesheet" href="/stylesheets/globalVariable.css">
+    <link rel="stylesheet" href="/stylesheets/partials.css">
+    {{!-- css --}}
+
+    {{#if user_part}}
+    {{!-- {{{body}}} --}}
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/subcategories.css">
+    <link rel="stylesheet" href="/stylesheets/user-header.css">
+    {{/if}}
+
+   {{#if user_header}}
+    {{!-- {{>user-header}} --}}
+    {{!-- {{{body}}} --}}
+    <link rel="stylesheet" href="/stylesheets/contact.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/user-header.css">
+    <link rel="stylesheet" href="/stylesheets/subcategories.css">
+    {{!-- {{>footer}} --}}
+    {{/if}}
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Ajax CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Data Tables CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+    <!-- JavaScript Link -->
+    {{!-- <script src="/javascripts/home_btn.js"></script> --}}
+    <script src="/javascripts/scripts.js"></script>
+    {{!-- Form Validate --}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    {{!-- Font --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+    <link href="http://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+    <!-- Title -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Egram</title> 
+  </head>
+
+  <body>
+
+    {{#if admin}}
+    {{>admin-header}}
+    {{/if}}
+
+    {{#if user_header}}
+    {{>user-header}}
+    {{{body}}}
+    {{!-- {{>footer}} --}}
+    {{/if}}
+
+    {{#if static}}
+    {{> admin-static-head}}
+    {{{body}}}
+    {{/if}}
+
+
+
+    {{#if staff}}
+    {{> staff-header}}
+    {{/if}}
+
+
+      {{#if staff_login}}
+    {{{body}}}
+    {{/if}}
+
+    
+
+
+
+
+
+
+    {{#if user_part}}
+    {{{body}}}
+    
+    {{/if}}
+
+    {{#if message}}
+    {{{body}}}
+    {{/if}}
+
+
+    <!-- Bootstrap CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/javascripts/validate.js"></script>
+  </body>
+</html>

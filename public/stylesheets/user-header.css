@@ -1,0 +1,88 @@
+.navbar .form-inline .input-search {
+  width: 20rem;
+  height: 40px;
+}
+
+
+@media (max-width: 500px) {
+
+  .navbar .form-inline .input-search {
+    width: 19rem;
+  }
+
+}
+
+.navbar .form-inline .form-control:focus,
+.navbar .form-inline .form-control:hover {
+  box-shadow: 0px 0px 21px 2px #dbdbdb;
+}
+
+.navbar .form-inline .form-control {
+
+  border: none;
+  border-bottom: 1px solid #f5dddd;
+  border-radius: 40px;
+  /* margin-left: 79px; */
+  padding-left: 23px;
+
+
+}
+
+
+/* // show lgo right side text */
+
+.d-flex .hide-991 {
+  display: none;
+}
+
+@media (max-width:991px) {
+  .d-flex .hide-991 {
+    display: block;
+  }
+
+}
+
+.base .account-space-r {
+  /* color: white !important; */
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 0px;
+}
+
+@media (min-width:681px){
+  .padding-bottom-3rem5 .userHead-nav{
+    /* height: unset; */
+  }
+}
+
+.padding-bottom-3rem5 .userHead-nav {
+  position: fixed;
+  height: 5rem;
+  
+  top: 0px;
+  width: 100%;
+  /* margin: 5px; */
+  /* border-radius: 11px; */
+  z-index: 50;
+  /* background-color: #6ae2f145; */
+  background-color: #6ae2f159;
+}
+
+a.text-dark:focus, a.text-dark:hover {
+  /* color: #66727a!important; */
+  vertical-align: text-top;
+}
+
+.nav-logo .d-flex .logo-tag{
+  letter-spacing: 1px;
+  /* background-color: #e9fffe;; */
+  padding: 10px;
+  font-style: 20px;
+  font-weight: 600;
+  /* box-shadow: -10px -10px 30px -14px #ecf1f0, 10px 6px 20px 0px #98dbd8; */
+}
+.d-flex .logo-subname{
+  font-weight: 400;
+  font-size: 17px;
+
+}

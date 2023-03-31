@@ -1,0 +1,307 @@
+ <div class="contact_info" >
+
+        
+
+    <!-- Contact Form -->
+
+    <div class="contact_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="contact_form_container">
+                        {{#if MESSAGE}}
+              {{#if MESSAGE.status}}
+                <div class="alert alert-success" role="alert">
+                  {{MESSAGE.message}}
+                </div>
+              {{else}}
+                <div class="alert alert-danger" role="alert">
+                  {{MESSAGE.message}}
+                </div>
+              {{/if}}
+            {{/if}}
+
+                      {{#if building}}
+                        <div class="contact_form_title">Building</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form" enctype="multipart/form-data">
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required"  name="name">
+                                <input type="text" id="contact_form_address" class="contact_form_address input_field" placeholder="Your Address" required="required"  name="address">
+                                <input type="text" id="contact_form_block_no" class="contact_form_block_no input_field" placeholder="Block no" name="block_no">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_district" class="contact_form_district input_field" placeholder="District" required="required"  name="district">
+                                <input type="number" id="contact_form_ward_no" class="contact_form_ward_no input_field" placeholder="Ward no" required="required"  name="ward_no">
+                                <input type="text" id="contact_form_street_name" class="contact_form_street_name input_field" placeholder="Street name" name="street">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_building_licence_no" class="contact_form_building_licence_number input_field" placeholder="Licence number" required="required"  name="licence_no">
+                                <input type="text" id="contact_form_total_building_rate" class="contact_form_total_building_rate input_field" placeholder="Total building area" required="required"  name="building_area">
+                                <input type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number" name="mob_number">
+                                <input type="text" id="contact_form_phone" class="contact_form_phone input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between" style="position: relative;">
+                                <label for="">patta</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required" onchange="viewImage(event,'imgViewpatta')"  name="patta">
+                                <img style="left: 60px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewpatta">
+
+                                <label for="">Reg. document</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required"  name="reg_document" onchange="viewImage(event,'imgViewreg')">
+                                <img style="left: 400px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewreg">
+
+                                <label for="">Cover letter</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  name="covering_letter" onchange="viewImage(event,'imgViewletter')">
+                                <img style="left: 800px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewletter">
+                            </div>
+
+
+
+
+                            
+                            <div class="contact_form_button" style="margin-top: 14rem;">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+
+                            {{#if property_tax}}
+                        <div class="contact_form_title">Property Tax</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form" enctype="multipart/form-data">
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required"  name="name">
+                                <input type="text" id="contact_form_address" class="contact_form_address input_field" placeholder="Your Address" required="required"  name="address">
+                                <input type="text" id="contact_form_block_no" class="contact_form_block_no input_field" placeholder="Block no" name="block_no">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_district" class="contact_form_district input_field" placeholder="District" required="required"  name="district">
+                                <input type="number" id="contact_form_ward_no" class="contact_form_ward_no input_field" placeholder="Ward no" required="required"  name="ward_no">
+                                <input type="text" id="contact_form_street_name" class="contact_form_street_name input_field" placeholder="Street name" name="street">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_building_licence_no" class="contact_form_building_licence_number input_field" placeholder="Licence number" required="required"  name="licence_no">
+                                <input type="text" id="contact_form_total_building_rate" class="contact_form_total_building_rate input_field" placeholder="Total building area" required="required"  name="total_building_area">
+                                <input type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number" name="number">
+                                <input type="text" id="contact_form_phone" class="contact_form_phone input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between" style="position: relative;">
+                                <label for="">patta</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required" onchange="viewImage(event,'imgViewpatta')"  name="patta">
+                                <img style="left: 60px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewpatta">
+
+                                <label for="">Reg. document</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required"  name="reg_document" onchange="viewImage(event,'imgViewreg')">
+                                <img style="left: 400px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewreg">
+
+                                <label for="">Cover letter</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  name="covering_letter" onchange="viewImage(event,'imgViewletter')">
+                                <img style="left: 800px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewletter">
+                            </div>
+
+
+                       <div class="contact_form_button" style="margin-top: 14rem;">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+
+                        </form>
+                      {{/if}}
+
+
+
+                        {{#if birth}}
+                        <div class="contact_form_title">Birth certificate</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form">
+                            <h6 class="">Child information </h6>
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Date of birth" required="required"  name="dob">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Child name" required="required"  name="child_name">
+                              <label for="">Male</label> 
+                              <input type="radio" name="gender" class="contact_form_" value="male">
+                              <label for="">Female</label> 
+                              <input type="radio" name="gender" class="contact_form_" value="female">
+                            </div>
+
+                            <h6 class="">Parents information </h6>
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Father name" required="required"  name="father_name">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Mother name" required="required"  name="mother_name">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Address" name="address">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Father aadhar no" required="required"  name="father_aadhar_no">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Mother aadhar no" required="required"  name="mother_aadhar_no">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Religion" name="religion">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="District" required="required"  name="district">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Pincode" required="required"  name="pin_code">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Phone no" name="phone_number">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+                             {{!-- <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <label for="">patta</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required"  name="patta">
+                                <label for="">Reg. document</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  required="required"  name="reg_document">
+                                <label for="">Cover letter</label>
+                                <input type="file" id="contact_form_" class="contact_form_ input_field"  name="covering_letter">
+                            </div> --}}
+
+{{!-- 
+                            <div class="contact_form_text">
+                                <textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+                            </div> --}}
+                            <div class="contact_form_button">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+                      {{#if deathCertificates}}
+                        <div class="contact_form_title">Death certificate</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form">
+                            <h6 class="">Death information </h6>
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="date" id="contact_form_" class="contact_form_ input_field" placeholder="Date of death" required="required"  name="death_date">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Name" required="required"  name="_name">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Age" required="required"  name="_age">
+                              <label for="">Male</label> 
+                              <input type="radio" name="gender" class="contact_form_" value="male">
+                              <label for="">Female</label> 
+                              <input type="radio" name="gender" class="contact_form_" value="female">
+                            </div>
+
+                            <h6 class="">Perment address information </h6>
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Wife/Husband Name" required="required"  name="name_husband_or_wife">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Adddress" required="required"  name="address">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="District" name="district">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Pin code" required="required"  name="pin_code">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Phone Number" name="phone_number">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Mother Name" required="required"  name="mother_name">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Father Name" required="required"  name="father_name">
+                                {{!-- <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Mother Number" required="required"  name="mother_no"> --}}
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Religion" name="religion">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+                            <div class="contact_form_button">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+
+                      {{#if street}}
+                        <div class="contact_form_title">Street light</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form">
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Applicant Name" required="required"  name="applicant_name">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Address" required="required"  name="address">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Area" required="required"  name="area">
+                            </div>
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="District" required="required"  name="district">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Door No" required="required"  name="door_no">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Ward No" name="ward_no">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Street Name" required="required"  name="street_name">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Phone Number" name="phone_number">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+                            <div class="contact_form_button">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+
+                      {{#if water}}
+                        <div class="contact_form_title">Water</div>
+                        <form action="{{link}}" method="{{method}}" id="contact_form">
+                            {{!-- <h6 class="">Death information </h6> --}}
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Applicant Name" required="required"  name="applicant_name">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Address" required="required"  name="address">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Area" required="required"  name="area">
+                            </div>
+
+                            {{!-- <h6 class="">Perment address information </h6> --}}
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="District" required="required"  name="district">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Door No" required="required"  name="door_no">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Ward No" name="ward_no">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Street Name" required="required"  name="street_name">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Phone Number" name="phone_number">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+                            <div class="contact_form_button">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+
+
+                         {{#if road}}
+                        <div class="contact_form_title">Road</div>
+                        <form action="{{link}}" method="{{method}}" enctype="multipart/form-data" id="contact_form">
+                            {{!-- <h6 class="">Death information </h6> --}}
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Applicant Name" required="required"  name="applicant_name">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Address" required="required"  name="address">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Area" required="required"  name="area">
+                            </div>
+
+                            {{!-- <h6 class="">Perment address information </h6> --}}
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="District" required="required"  name="district">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Door No" required="required"  name="door_no">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" placeholder="Ward No" name="ward_no">
+                            </div>
+
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Street Name" required="required"  name="street_name">
+                                <input type="number" id="contact_form_" class="contact_form_ input_field" placeholder="Phone Number" name="phone_number">
+                                <input type="file" id="contact_form_" required="required" class="contact_form_ input_field"  name="signature" onchange="viewImage(event,'imgViewsignatue')">
+                                <img style="left: 60px;position: absolute;top: 70px;" src="" alt="" width="200px" height="200px" id="imgViewsignatue">
+                                <input type="text" id="contact_form_" class="contact_form_ input_field" hidden name="form_type" value="{{type}}">
+                            </div>
+
+                            
+
+                            <div class="contact_form_button" style="margin-top: 14rem;">
+                                <button type="submit" class="buttonContact contact_submit_button">Submit</button>
+                            </div>
+                        </form>
+                      {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel"></div>
+    </div>
+

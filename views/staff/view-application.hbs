@@ -1,0 +1,72 @@
+<div class="container mt-5">
+      {{#if result}}
+<div class="div m-2" style="padding: 2rem;
+    background-color: #e5e9e9;">
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Applicant number :  {{result.applicationID}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Applicant name :  {{result.applicant_name}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Addres :  {{result.address}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Area :  {{result.Area}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">District :  {{result.district}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Door No. :  {{result.door_no}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Ward No. :  {{result.ward_no}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Street name :  {{result.street_name}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Mobile number :  {{result.phone_number}} </a>
+    </div>
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Service type :  {{result.form_type}} </a>
+    </div>
+    {{#if result.pic_patta}}
+    <div class="application-div">
+        <label for="">Patta</label>
+        <img src="/category-images/{{result.pic_patta}}.jpg" style="width: 300px;height:200px" alt="">    
+    </div>
+    {{/if}}
+    {{#if result.pic_document}}
+     <div class="application-div">
+        <label for="">Document</label>
+        <img src="/category-images/{{result.pic_document}}.jpg" style="width: 300px;height:200px" alt="">    
+    </div>
+    {{/if}}
+    {{#if result.pic_cover_letter}}
+     <div class="application-div">
+        <label for="">Patta</label>
+        <img src="/category-images/{{result.pic_cover_letter}}.jpg" style="width: 300px;height:200px" alt="">    
+    </div>
+    {{/if}}
+     {{#if result.pic_signature}}
+     <div class="application-div">
+        <label for="">Patta</label>
+        <img src="/category-images/{{result.pic_signature}}.jpg" style="width: 300px;height:200px" alt="">    
+    </div>
+    {{/if}}
+</div>
+    {{/if}}
+  <style>
+.application-view-aTag{
+    color: black;
+    padding: 10px;
+    font-size: 17px;
+    text-decoration: none;
+}
+.application-div{
+    margin: 10px;
+
+}
+  </style>

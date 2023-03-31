@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Status</th>
+      <th scope="col">Application ID</th>
+      <th scope="col">Type of service</th>
+      <th scope="col"></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each results}}
+    <tr class="counter">
+      <th id="count" scope="row"><span></span></th>
+      <td>{{this.applicant_name}}</td>
+      <td>{{this.status}}</td>
+      <td>{{this.applicationID}}</td>
+      <td>{{this.form_type}}</td>
+      <td><a href="/staff/viewapplications-approvel/approved/{{this._id}}">Approvel</a></td>
+      <td><a href="/staff/viewapplications-approvel/rejected/{{this._id}}">Reject</a></td>
+      <td><a href="/staff/view-application/{{this._id}}">view</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+<style>
+      
+  tr span::before {
+     counter-increment: my-sec-counter;
+    content: " " counter(my-sec-counter) ". ";
+  } 
+</style>

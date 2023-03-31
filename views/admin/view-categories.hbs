@@ -1,0 +1,50 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if Categories}}
+    {{#each Categories}}
+    <tr>
+      <th scope="row">1</th>
+      <td>
+         <img
+          class="card-img-top"
+          src="/category-images/{{this._id}}.jpg"
+          alt="loading..."
+          style="
+          
+    width: 65px;
+    height: 50px;
+    border-radius: 100%;
+"
+        />
+      </td>
+      <td>{{this.name}}</td>
+      <td>
+        <a class="btn btn-success" href="/admin/edit-category/{{this._id}}/{{this.name}}" >Edit</a>
+      </td>
+      
+      <td>
+          <a href="#" class="btn btn-danger" onclick="deleteCat('{{this._id}}',',{{this.name}}')" >Delete</a>
+      </td>
+      <td>
+        <a href="#" onclick="viewDisplay('/admin/subcategoryVIew/{{this._id}}/{{this.name}}')">Questions</a>
+      </td>
+    </tr>
+      {{/each}}
+  {{else}}
+    <tr>
+      <td>No data available!</td>
+    </tr>
+  {{/if}}
+    
+  </tbody>
+</table>

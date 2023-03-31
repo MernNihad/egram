@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <table class="table">
+    <h3>Applications</h3>
+    {{#if results}}
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Application ID</th>
+          <th scope="col">Type of service</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each results}}
+          <tr class="counter">
+            <th id="count" scope="row"><span></span></th>
+            <td>{{this.applicationID}}</td>
+            <td>{{this.form_type}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    {{else}}
+      <h5>!</h5>
+    {{/if}}
+  </table>
+</div>
+
+<style>
+
+  tr span::before { counter-increment: my-sec-counter; content: " "
+  counter(my-sec-counter) ". "; }
+</style>

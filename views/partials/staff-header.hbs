@@ -1,0 +1,71 @@
+<header>
+  <div>
+    <nav class="navbar navbar-expand   admin-header-style " style="background-color: #ffffff59;" >
+      <a style="color: black;" class="navbar-brand  pl-5" href="/staff/">Egram</a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item text-center color-gold-parent">
+            <a class="nav-link " style="color: black;" href="">{{auth.name}} <i class="fa-solid fa-user" style="color: black;"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="contain-two-admin-part">
+      <div id="admin-left-panel">
+        <div class="">
+          <div class="" id="panel-sub-parts">
+            <a id="panel-sub-parts-aTag">Teacher</a>
+          </div>
+
+
+          <div class="panel-middle-subPart">
+
+          <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Applications</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/staff/viewapplications">View</a>
+              <a class="dropdown-item" href="/staff/viewapplications/pending">Pending</a>
+              <a
+               class="dropdown-item" href="/staff/viewapplications/approved">Approvel</a>
+               <a
+               class="dropdown-item" href="/staff/viewapplications/rejected">Reject</a>
+            </div>
+          </div>
+
+
+            {{!-- <div class="panel-middle-subPart-Div border-top-solid-whiteLight">
+              <a href="/admin/add-categories/teacher" class="panel-middle-subPart-aTag"><i class="fa-solid fa-circle-plus icon-for-panel-middle font-size-17"></i><span class="thiOne-ForPanel-middle icon-for-panel-middle">Create</span></a>
+            </div> --}}
+            {{!-- <div class="panel-middle-subPart-Div">
+              <a href="/teacher/" class="panel-middle-subPart-aTag"><i class="fa-solid fa-list icon-for-panel-middle font-size-17"></i><span class="thiOne-ForPanel-middle">Categories</span></a>
+            </div> --}}
+
+            <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Profile</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              {{!-- <a class="dropdown-item" href="/teacher/edit-profile">View</a> --}}
+              <a class="dropdown-item" href="/staff/edit-profile">Edit</a>
+            </div>
+          </div>
+
+            <div class="panel-middle-subPart-Div">
+              <a href="/staff/all-users" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle">Users</span></a>
+            </div>
+
+            <div class="panel-middle-subPart-Div">
+              <a href="/staff/logout" class="panel-middle-subPart-aTag"><i class="fa-solid fa-arrow-right-from-bracket icon-for-panel-middle-red font-size-17"></i><span class="thiOne-ForPanel-middle icon-for-panel-middle-red">LogOut</span></a>
+            </div>
+          </div>
+          <div class=""></div>
+        </div>
+      </div>
+      <div class=" mt-6  w-100 margin-top-1rem admin-panel-Dynamic" >
+        {{{body}}}
+      </div>
+    </div>
+  </div>
+</header>

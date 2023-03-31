@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <form action="/status" method="post">
+  <div class="row">
+    <div class="col">
+      <input type="number" name="application_number" class="form-control" placeholder="Application Number">
+    </div>
+    <div class="col">
+        <select class="form-control" name="type_service" id="">
+            <option value="property_tax">Propert tax</option>
+            <option value="building">Building</option>
+            <option value="birth_certificate">Birth certificate</option>
+            <option value="death-certificates">Death certificate</option>
+            <option value="street">Street</option>
+            <option value="water">Water</option>
+            <option value="road">Road</option>
+        </select>
+    </div>
+    <div class="col">
+      <input type="submit" class="form-control" value="Search" >
+    </div>
+  </div>
+</form>
+
+{{#if results}}
+ <table class="table mt-5">
+  <thead>
+    <tr>
+      {{!-- <th scope="col">#</th> --}}
+      <th scope="col">Name</th>
+      <th scope="col">Status</th>
+      <th scope="col">Application ID</th>
+      <th scope="col">Type of service</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each results}}
+    <tr class="counter">
+      {{!-- <th id="count" scope="row"><span></span></th> --}}
+      <td>{{this.name}}</td>
+      <td>{{this.status}}</td>
+      <td>{{this.applicationID}}</td>
+      <td>{{this.form_type}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{/if}}
+</div>
+
+
+
+
+   
+
+
+<style>
+      
+  tr span::before {
+     counter-increment: my-sec-counter;
+    content: " " counter(my-sec-counter) ". ";
+  } 
+</style>

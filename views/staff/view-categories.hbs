@@ -1,0 +1,35 @@
+<div class="row ml-1">
+  {{#if Categories}}
+    {{#each Categories}}
+      <div
+        onclick="viewDisplay('/teacher/subcategoryVIew/{{this._id}}/{{this.name}}')"
+        class="card card-for-view-hover m-4"
+        style="width: 12rem;"
+      >
+        <img
+          class="card-img-top"
+          src="/category-images/{{this._id}}.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{this.name}}</h5>
+          <a
+            class="btn btn-success"
+            href="/teacher/edit-category/{{this._id}}/{{this.name}}"
+          >Edit</a>
+          <a
+            href="#"
+            class="btn btn-danger"
+            onclick="deleteteacher('{{this._id}}',',{{this.name}}')"
+          >Delete</a>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <h3>No data available!</h3>
+  {{/if}}
+</div>
+
+<style>
+  .card-for-view-hover:hover{ border: 1px solid black; transform: scale(1.01); }
+</style>

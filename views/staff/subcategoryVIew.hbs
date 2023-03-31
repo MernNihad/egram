@@ -1,0 +1,63 @@
+<section class="margin-bottom-5rem margin-top-4rem">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div>
+        {{#if name}}
+          <div class="">
+            <a
+              href="/teacher/view-categories"
+              class="text-dark text-decoration-none"
+            >
+              <h3>{{name}}</h3>
+            </a>
+          </div>
+        {{/if}}
+      </div>
+      <div>
+        <div>
+          <span id="add-subCat-ViewBtn">Add</span><a
+            class="btn text-white btn btn-success"
+            href="/teacher/add-subcategories/{{_id}}/{{name}}"
+          >
+            <i class="fa-solid fa-plus font-size-18"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="view-body" style="margin: 25px;display:flex">
+        <div class="view-body-first-div">
+        </div>
+        <div>
+          <ul
+            class="viw-body-contents"
+            style="list-style-type: none;margin-left:20px"
+          >
+            <li
+              onclick="viewDisplay('/teacher/viewQstn/{{_id}}/mcq_type')"
+            >MCQ</li>
+            <li
+              onclick="viewDisplay('/teacher/viewQstn/{{_id}}/true_or_false_type')"
+            >TRUE / FALSE</li>
+
+            <li
+              onclick="viewDisplay('/teacher/viewQstn/{{_id}}/type_question_type')"
+            >TYPE ANSWER</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  {{!-- {{else}} --}}
+  {{! <h3 class="pt-5">No data available!</h3> }}
+  {{!-- {{/if}} --}}
+</section>
+
+<style>
+  .viw-body-contents li { margin: 8px 0px -10px -9px; border-radius: 3px;
+  padding: 10px; font-size: 18px; } .viw-body-contents li:hover { border: 1px
+  solid black; } .view-body-first-div { /* border-radius: 29px; */
+  background-color: #31ab09; height: 200px; border-top-left-radius: 19px;
+  border-bottom-right-radius: 10px; width: 5px; }
+</style>

@@ -1,0 +1,52 @@
+<section>
+  <div class="container-fluid align-as-center">
+    <div class="box-shadow-forgot">
+      <div class="top-section-forgot">
+        <div>
+          <h4>Enter your password</h4>
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <div class="bottom-section-First_heading">
+          {{#if Response}}
+          {{#if Response.status}}
+          <div class="success-forgot-password">
+            <div class="error-message">
+              <p class="error-message-heading">{{Response.message}}</p>
+            </div>
+          </div>
+          {{else}}
+          <div class="error-div">
+            <div class="error-message">
+              <p class="error-message-heading">{{Response.message}}</p>
+            </div>
+          </div>
+          {{/if}}
+          {{/if}}
+          <div>
+            <p>Please enter your current password to submit.</p>
+          </div>
+        </div>
+        <form action="/admin/verifyPass" method="post">
+          <div>
+            <div>
+              <input class="email-forgot" type="password" placeholder="Enter password" name="password" />
+            </div>
+          </div>
+          <div class="bottom-section-Last_heading">
+            <div></div>
+            <div class="bottom-section-rightBtn">
+              <div>
+                <a href="/admin/edit-profile" class="btn btn-back ">Back</a>
+              </div>
+              <div>
+                <button class="btn btn-success btn-forgot" type="submit">Search</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

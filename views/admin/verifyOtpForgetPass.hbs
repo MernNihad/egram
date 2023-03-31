@@ -1,0 +1,48 @@
+<section>
+  <div class="container-fluid align-as-center">
+    <div class="box-shadow-forgot">
+      <div class="top-section-forgot">
+        <div>
+          <h4>Enter security code</h4>
+        </div>
+      </div>
+      <div></div>
+      <div>
+        <div class="bottom-section-First_heading">
+          {{#if RESPONSE_FOR_ENTER_OTP}}
+          <div class="error-div">
+            <div class="error-message">
+              <p class="error-message-heading">{{RESPONSE_FOR_ENTER_OTP}}</p>
+            </div>
+          </div>
+          {{/if}}
+          <div>
+            <p>Enter the code we just send on your email address <code>{{email}}</code></p>
+          </div>
+        </div>
+        <form action="/admin/verifyOtpForgetPass" method="post" autofocus="">
+          <div>
+            <div>
+              <input class="email-forgot" type="number" placeholder="Security code" name="security_code" autofocus="" />
+            </div>
+          </div>
+          <div class="bottom-section-Last_heading">
+            <div class="margin-top-14">
+              <div>
+                <a href="/admin/forgot-password" class="font-size-12">Didn't get a code?</a>
+              </div>
+            </div>
+            <div class="bottom-section-rightBtn">
+              <div>
+                <a href="/admin/login" class="btn btn-back ">Back</a>
+              </div>
+              <div>
+                <button style="color: #fff;background-color: #2a0fbb;border-color: #140ba7;" class="btn btn-forgot" type="submit">Continue</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<header>
+  <div>
+    <nav style="background-color: #ffffff;color:black" class="navbar navbar-expand admin-header-style " >
+      <a class="navbar-brand pl-5" style="color:black" href="/admin/">Egram</a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item text-center">
+            <a class="nav-link" style="color:black" href="">{{Admin.name}} <i class="fa-solid fa-user" style="color: black;"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="contain-two-admin-part">
+      <div id="admin-left-panel">
+        <div class="">
+          <div class="" id="panel-sub-parts">
+            <a id="panel-sub-parts-aTag">Dashboard</a>
+          </div>
+          <div class="panel-middle-subPart">
+
+
+            <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Users</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/admin/all-users">View</a>
+            </div>
+          </div>
+
+
+            <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Applications</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/admin/view-services">View</a>
+            </div>
+          </div>
+
+
+
+            <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Staff</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              
+              <a class="dropdown-item" href="/admin/view-teacher">View</a>
+              <a class="dropdown-item" href="/admin/add-teacher">Create</a>
+            </div>
+          </div>
+
+
+
+            <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Profile</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              {{!-- <a class="dropdown-item" href="/admin/view-profile">View</a> --}}
+              <a class="dropdown-item" href="/admin/edit-profile">Edit</a>
+            </div>
+          </div>
+
+
+           <div class="dropdown">
+            <div class="panel-middle-subPart-Div border-top-solid-whiteLight dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a href="" class="panel-middle-subPart-aTag"><span class="thiOne-ForPanel-middle icon-for-panel-middle">Security code</span></a>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/admin/add-security-code">Create</a>
+              <a class="dropdown-item" href="/admin/edit-security-code">Edit</a>
+            </div>
+          </div>
+
+
+           
+
+            <div class="panel-middle-subPart-Div">
+              <a href="/admin/logout" class="panel-middle-subPart-aTag"><i class="fa-solid fa-arrow-right-from-bracket icon-for-panel-middle-red font-size-17"></i><span class="thiOne-ForPanel-middle icon-for-panel-middle-red">LogOut</span></a>
+            </div>
+          </div>
+          <div class=""></div>
+        </div>
+      </div>
+      <div class=" mt-6  w-100 margin-top-1rem admin-panel-Dynamic" >
+        {{{body}}}
+      </div>
+    </div>
+  </div>
+</header>

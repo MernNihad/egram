@@ -1,0 +1,101 @@
+ <div class="contact_info" >
+
+        <div class="menu-section menuBar" id="menu-sectionAbout" >
+            <div class="menu-tab">
+                <a class="menu-side-btnTag" style="text-decoration: none;" href="/">Home</a>
+                <a href="/aboutus" style="margin: 12px;text-decoration: none;">About</a>
+                <a href="/contact" style="text-decoration: none;">Contact</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div style="margin-bottom: 1.5rem;" class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
+                           <!-- Contact Item -->
+                        <div class="contact_info_item d-flex flex-row align-items-center justify-content-start component_container_homeAbout">
+                            <div class="contact_info_image"><i class="fa-solid fa-user-tie"></i></div>
+                            <div class="contact_info_content">
+                                <div class="contact_info_title">FOUNDER</div>
+                                <div class="contact_info_text">MR. SYED SHAHBAZ</div>
+                            </div>
+                        </div>
+                        <!-- Contact Item -->
+                        <div class="contact_info_item d-flex flex-row align-items-center justify-content-start component_container_homeAbout ">
+                            <div class="contact_info_image"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div class="contact_info_content">
+                                <div class="contact_info_title">Address</div>
+                                <div class="contact_info_text">KOCHIN ,KERALA ,INDIA</div>
+                            </div>
+                        </div>
+                        <!-- Contact Item -->
+                        <div class="contact_info_item d-flex flex-row align-items-center justify-content-start component_container_homeAbout ">
+                            <div class="contact_info_image"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact_info_content">
+                                <div class="contact_info_title">Email</div>
+                                <div class="contact_info_text"><a class="contact_info_item_inner_a" href="mailto:ahlbytweb@gmail.com">ahlbytweb@gmail.com</a></div>
+                            </div>
+                        </div>
+                        <!-- Contact Item -->
+                        <div class="contact_info_item d-flex flex-row align-items-center justify-content-start component_container_homeAbout ">
+                            <div class="contact_info_image"><i class="fa-solid fa-mobile"></i></div>
+                            <div class="contact_info_content">
+                                <div class="contact_info_title">Phone</div>
+                                <div class="contact_info_text"><a class="contact_info_item_inner_a" href="tel:7676941486">+91 7676941486</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+
+    <div class="contact_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="contact_form_container">
+                        <div class="contact_form_title">Get in Touch</div>
+
+                        <form id="contact_form">
+                            <div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
+                                <input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required" data-error="Name is required." name="fullname">
+                                <input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="Your email" required="required" data-error="Email is required." name="email">
+                                <input type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number" name="number">
+                            </div>
+                            <div class="contact_form_text">
+                                <textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+                            </div>
+                            <div class="contact_form_button">
+                                <button type="submit" class="buttonContact contact_submit_button">Send Message</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel"></div>
+    </div>
+
+
+
+<script>
+        $("#contact_form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxhdL_SIUsPz53NXRvTscPIBm-mgxL-7Bb56AKuXzIdYLQlJR2n2mEVhnnJjZnXGm9U1Q/exec",
+                data:$("#contact_form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                },
+                error:function (err){
+                    alert("Something Error")
+                }
+            })
+        })
+</script>
