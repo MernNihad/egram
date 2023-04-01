@@ -77,9 +77,9 @@ module.exports = {
       // console.log(result);
     })
   },
-  AllCatagories: () => {
+  getServices: () => {
     return new Promise(async (resolve, reject) => {
-      let data = await db.get().collection(collection.CATEGORY_COLLECTION).find().toArray()
+      let data = await db.get().collection('services').find().toArray()
       if(data.length>0){
         resolve({status:true,data})
       }else{

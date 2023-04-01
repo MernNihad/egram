@@ -210,6 +210,29 @@ function deleteCat(id, name) {
 }
 
 
+
+function deleteServices(id, name) {
+  let cfm = confirm("Are you want to delete " + name);
+  if (cfm) {
+    $.ajax({
+      url: "/admin/delete-services/",
+      method: "post",
+      data: {
+        id: id,
+      },
+      success: (response) => {
+        if (response.status) {
+          location.reload();
+        } else {
+          location.reload();
+        }
+      },
+    });
+  } else {
+  }
+}
+
+
 function deletestaff(id, name) {
   let cfm = confirm("Are you want to delete " + name);
   if (cfm) {

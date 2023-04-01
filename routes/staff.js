@@ -87,15 +87,12 @@ router.get("/login", function (req, res, next) {
   
   router.get('/viewapplications', verifyLogin, async(req, res) => {
     let results = await staff_helper.getApplications()
-    // .then((response) => {
-      // let Categories = response.categories
       let auth = req.session.staff;
       res.render(`staff/view-applications`, {
         staff:true,
         results,
         auth,
       });
-    // });
   })
 
 

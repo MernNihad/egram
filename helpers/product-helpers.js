@@ -158,17 +158,7 @@ module.exports = {
         })
     },
 
-    deleteQuestion: (subcategoryID) => {
-        return new Promise((resolve, reject) => {
-            db.get().collection(collection.ADMIN_QUESTION_COLLECTION).deleteOne({ _id: objectId(subcategoryID) }).then((response) => {
-                if (response.deletedCount == 1) {
-                    resolve({ status: true })
-                } else {
-                    resolve({ status: false })
-                }
-            })
-        })
-    },
+    
     getCategoryDetails: (CategoryID) => {
         return new Promise((resolve, reject) => {
             db.get().collection(collection.CATEGORY_COLLECTION).findOne({ _id: objectId(CategoryID) }).then((response) => {
@@ -267,7 +257,7 @@ module.exports = {
 
     getServices: (service) => {
         return new Promise(async (resolve, reject) => {
-           let response =await db.get().collection('forms').find({ status:'approved',form_type:service}).toArray()
+           let response =await db.get().collection('services').find().toArray()
             
             
                resolve(response)
@@ -727,6 +717,38 @@ module.exports = {
         return new Promise(async (resolve, reject) => {
             let result = await db.get().collection(collection.USER_ANSWER_COLLECTION).find({ userID: id,typeOfQst:'type_question_type',score:0}).toArray()
             resolve(result)
+        })
+    },
+
+
+
+
+
+    // new codes
+
+    
+    createServices: (data) => {
+        return new Promise(async (resolve, reject) => {
+            let checkData = await db.get().collection('services').find({name:data.name}).toArray()
+            console.log(checkData.length,'checkData');
+            if(checkData.length===0){
+
+                let result = await db.get().collection('services').insertOne(data)
+                resolve(result)
+            }else{
+                reject({message:'Already available'})
+            }
+        })
+    },
+    
+    deleteServices: (categoryID) => {
+        return new Promise((resolve, reject) => {
+            db.get().collection('services').deleteOne({ _id: objectId(categoryID) }).then((response) => {
+
+                // db.get().collection(collection.SUBCATEGORY_COLLECTION).deleteMany({ category: objectId(categoryID) }).then((response) => {
+                    resolve({status:true})
+                // })
+            })
         })
     },
 }

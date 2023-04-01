@@ -25,7 +25,8 @@ router.get("/", async function (req, res, next) {
 //----------HOME-PAGE----------//
 router.get('/home', verifyLogin, async (req, res) => {
 
-  userHelpers.AllCatagories().then((response) => {
+  userHelpers.getServices().then((response) => {
+    console.log(response);
     if (response.status) {
       res.render("user/home", {
         user_header,
@@ -300,5 +301,12 @@ router.post('/form/:type', verifyLogin, (req, res) => {
     //  console.log(req.files);
   }
 })
+
+
+
+
+// new codes
+
+
 
 module.exports = router;

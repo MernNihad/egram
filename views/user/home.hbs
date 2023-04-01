@@ -2,8 +2,15 @@
   <div class="container" id="container">
     <h3 class="mt-4">Services</h3>
     <div class="row home-row" id="results">
-
-      <div class="card-div m-4" onclick="viewPage('/services/building')">
+      {{#each response.data}}
+       <div class="card-div m-4" onclick="viewPage('/services/{{this._service_type_}}')">
+        <a href="" style="" class="card-div-icons">
+          <i style="color: black;" class="fa-solid fa-building"></i>
+        </a>
+        <p class="card-div-p-tag">{{name}}</p>
+      </div>
+      {{/each}}
+      {{!-- <div class="card-div m-4" onclick="viewPage('/services/building')">
         <a href="" style="" class="card-div-icons">
           <i style="color: black;" class="fa-solid fa-building"></i>
         </a>
@@ -56,7 +63,7 @@
           <i class="fa-solid fa-sheet-plastic"></i>
         </a>
         <p class="card-div-p-tag">Death certificate</p>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>

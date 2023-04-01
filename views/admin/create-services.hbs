@@ -1,0 +1,68 @@
+<div class="my-login-page">
+  <section class="h-100">
+    <div class="container main-container h-100">
+      <div class="row justify-content-center h-100">
+        <div class="card-wrapper">
+          <div class="top-heading-main_div">
+            <div class="p-3 top-heading-sub_div">
+            </div>
+          </div>
+          <div class="card fat">
+            <div class="card-body">
+              {{! <h4 class="card-title text-decoration-underline" style="font-family: 'Avenir', sans-serif ;">Register</h4> }}
+              <form
+                action="/admin/create-services"
+                style="font-family: 'Avenir', sans-serif ;"
+                method="post"
+                id="signupForm"
+                class="signup-form"
+              >
+                {{#if MESSAGE}}
+                  {{#if MESSAGE.status}}
+                    <div class="alert alert-success" role="alert">
+                      {{MESSAGE.message}}
+                    </div>
+                  {{else}}
+                    <div class="alert alert-danger" role="alert">
+                      {{MESSAGE.message}}
+                    </div>
+                  {{/if}}
+                {{/if}}
+                <div class="form-group">
+                  <input
+                    id="name"
+                    placeholder="Service name"
+                    type="text"
+                    class="form-control"
+                    name="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="sel1">Select list:</label>
+                  <select name="_service_type_" class="form-control" id="sel1">
+                    <option value="birth-certificates">Birth Certificates</option>
+                    <option value="death-certificates">Death Certificates</option>
+                    <option value="street">Street light</option>
+                    <option value="water">Water Supply</option>
+                    <option value="road">Road Application</option>
+                    <option value="property-tax">Property Tax</option>
+                    <option value="building">Building Permit</option>
+                  </select>
+                </div>
+                <div class="form-group m-0" style="text-align: end;">
+                  <button
+                    style="color: #fff;background-color: #2a0fbb;border-color: #140ba7;"
+                    type="submit"
+                    class="btn"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
