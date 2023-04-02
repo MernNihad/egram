@@ -13,18 +13,16 @@
         {{#if teachers}}
         {{#each teachers}}
         <tr>
-          {{!-- <td>{{this.date}}</td> --}}
           <td>{{this.name}}</td>
           <td>{{this.email}}</td>
-          <td><a class="btn btn-success" href="/admin/edit-teacher/{{this._id}}/{{this.name}}">Edit</a></td>
-          <td><a style="color:white" class="btn btn-danger" onclick="deletestaff('{{this._id}}',',{{this.name}}')">Delete</a></td>
-           {{!-- <div class=""> --}}
+          <td><a class="btn btn-success" href="/admin/edit-staff/{{this._id}}/{{this.name}}">Edit</a></td>
+          <td><a style="color:white" class="btn btn-danger" onclick="deleteCollections('{{this._id}}',',{{this.name}}','/admin/delete-staff/','post')">Delete</a></td>
 
         </tr>
         {{/each}}
         {{else}}
         <tr>
-            <td>No contents</td>
+            <td>empty</td>
         </tr>
         {{/if}}
       </tbody>

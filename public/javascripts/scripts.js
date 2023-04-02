@@ -9,16 +9,6 @@ function viewImageSubCategory(event) {
   );
 }
 
-// function viewImagepatta(event) {
-//   document.getElementById('imgViewpatta').src = URL.createObjectURL(
-//     event.target.files[0]
-//   );
-// }
-// function viewImageDocu(event) {
-//   document.getElementById('imgViewreg').src = URL.createObjectURL(
-//     event.target.files[0]
-//   );
-// }
 function viewImage(event,id) {
   document.getElementById(id).src = URL.createObjectURL(
     event.target.files[0]
@@ -51,13 +41,30 @@ $(document).ready(function () {
       },
     },
   });
-  $("#signupForm").validate({
+  $("#signupFormvalidate").validate({
     rules: {
       name: {
         required: true,
         minlength: 4, //for length of name,
         maxlength: 36,
       },
+      father_name:{
+        required:true
+      },
+      
+      date_of_birth:{
+        required:true
+      },
+      address:{
+        required:true
+      },
+      gender:{
+        required:true
+      },
+      block:{
+        required:true,
+      },
+      
       password: {
         required: true,
         minlength: 6,
@@ -233,12 +240,12 @@ function deleteServices(id, name) {
 }
 
 
-function deletestaff(id, name) {
+function deleteCollections(id, name,url,method) {
   let cfm = confirm("Are you want to delete " + name);
   if (cfm) {
     $.ajax({
-      url: "/admin/delete-staff/",
-      method: "post",
+      url: url,
+      method: method,
       data: {
         id: id,
       },

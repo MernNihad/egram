@@ -103,21 +103,21 @@ router.get('/services/:type', verifyLogin, (req, res) => {
       user_header,
     })
 
-  } else if (req.params.type === 'property-tax') {
+  } else if (req.params.type === 'property_tax') {
     res.render('user/viewForm', {
       property_tax: true,
       type: 'property_tax',
-      link: '/form/property-tax',
+      link: '/form/property_tax',
       method: 'post',
       MESSAGE: req.session.MESSAGE,
       user_header,
     })
 
-  } else if (req.params.type === 'birth-certificates') {
+  } else if (req.params.type === 'birth_certificates') {
     res.render('user/viewForm', {
       birth: true,
       type: 'birth_certificate',
-      link: '/form/birth-certificates',
+      link: '/form/birth_certificates',
       method: 'post',
       MESSAGE: req.session.MESSAGE,
       user_header,
@@ -158,6 +158,8 @@ router.get('/services/:type', verifyLogin, (req, res) => {
       MESSAGE: req.session.MESSAGE,
       user_header,
     })
+  }else{
+    res.redirect('/')
   }
   req.session.MESSAGE = null
 })
@@ -173,6 +175,18 @@ router.get('/status', verifyLogin,async (req, res) => {
       userData: req.session.user,
     })
 })
+
+
+router.get('/about', verifyLogin,async (req, res) => {
+  // let results = await userHelpers.getRecords(req.session.user._id)
+    res.render('user/about', {
+      user_header,
+      userData: req.session.user,
+      // results,
+    })
+})
+
+
 
 router.post('/status', verifyLogin,async (req, res) => {
   console.log(req.body);
@@ -223,7 +237,7 @@ router.post('/form/:type', verifyLogin, (req, res) => {
       }
       res.redirect(`/services/${req.session.PARAMS_TYPE}`)
     })
-  }else if (req.params.type === 'property-tax') {
+  }else if (req.params.type === 'property_tax') {
     productHelpers.insertForm(req.body, req.session.user._id, ApplicationID, patta, document, cover_letter).then((response) => {
       if (req.files.patta) {
         req.files.patta.mv('./public/category-images/' + patta + '.jpg')
@@ -241,7 +255,7 @@ router.post('/form/:type', verifyLogin, (req, res) => {
       res.redirect(`/services/${req.session.PARAMS_TYPE}`)
     }) 
  
-  }else if (req.params.type === 'birth-certificates') {
+  }else if (req.params.type === 'birth_certificates') {
     productHelpers.insertForm(req.body, req.session.user._id, ApplicationID, patta, document, cover_letter).then((response) => {
      
       req.session.MESSAGE = {

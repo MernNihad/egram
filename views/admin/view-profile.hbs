@@ -2,24 +2,34 @@
     <div class="container">
         <div class="d-flex flex-row justify-content-between">
             <div class="">
-                
                     <div class="row add-SubCatLeftUI  mt-4">
-                        
-                      
+                        {{#if Edit_Response}}
+                        {{#if Edit_Response.status}}
+                        <div class="success-forgot-password w-100">
+                            <div class="error-message">
+                                <div class="error-message-heading">{{Edit_Response.message}}</div>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="error-div w-100">
+                            <div class="error-message">
+                                <p class="error-message-heading">{{Edit_Response.message}}</p>
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{/if}}
                         <div class="col-12 m-1">
-                            {{data.name}}
-                            {{!-- <input type="text" id="name" placeholder="Name" class="form-control" name="name" value="" /> --}}
+                            <input type="text" id="name" placeholder="Name" class="form-control" name="name" value="{{data.name}}" />
                         </div>
                      
                         <div class="col-12 m-1">
-                            {{data.email}}
-                            {{!-- <input type="email" id="email" placeholder="E-mail" class="form-control" name="email" value="" /> --}}
+                            <input type="email" id="email" placeholder="E-mail" class="form-control" name="email" value="{{data.email}}" />
                         </div>
                         
-    
-
+                        <div class="col-12 m-1">
+                            <input type="password" id="password" placeholder="Password" class="form-control" name="password" />
+                        </div>
                     </div>
-                
             </div>
             <div class="w-100  text-dark "> </div> {{!-- this designed class use this one ( addSubCat-RightPanel ) --}}
         </div>

@@ -6,7 +6,7 @@
         <div class="body-div">
             <div class="" style="    display: flex;justify-content: space-between;">
                 <a class="body-div-a-tag" style="color: black;text-decoration:none;" href="/admin/viewSingleServices/{{this._service_type_}}">{{this.name}}</a> 
-                <a class="body-div-a-tag" style="color: blue;" href="#"  onclick="deleteCollections('{{this._id}}','{{this.name}}','/admin/delete-services/{{this._service_type_}}','post')">delete</a> 
+                <a class="body-div-a-tag" style="color: blue;" href="#"  onclick="deleteCollections('{{this._id}}','{{this.name}}','/staff/delete-services/{{this._service_type_}}','post')">delete</a> 
             </div>
         </div>
         {{/each}}

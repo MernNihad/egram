@@ -8,14 +8,14 @@ const variables = require("../config/variables");
 const collections = require("../config/collections");
 module.exports = {
     doLogin: (userData) => {
-        // console.log('start server');
+        console.log(userData);
         return new Promise(async (resolve, reject) => {
           let response = {};
-          let user = await db.get().collection(collection.ADMIN_ADD_TEACHER).findOne({ email: userData.email });
+          let user = await db.get().collection('staff').findOne({ email: userData.email });
           if (user) {
             if(user.password===userData.password){
               console.log('email password correct');
-              db.get().collection(collections.ADMIN_ADD_TEACHER).findOne({_id:user._id}).then((data)=>{
+              db.get().collection('staff').findOne({_id:user._id}).then((data)=>{
 
                 // console.log(user,'user for server side');
                 resolve({status:true,data})
@@ -25,6 +25,7 @@ module.exports = {
             let message = 'Password not correct'
             resolve({ status: false, message });
             }
+
           } 
           else {
             console.log("Email not found ");

@@ -253,9 +253,14 @@ table, th, td {
 /* Login and Signup style */
 
 #email-error,
+#gender-error,
 #password-error,
 #name-error,
-#agree-error {
+#agree-error,
+#father_name-error,
+#date_of_birth-error,
+#address-error,
+#block-error {
   color: red;
 }
 

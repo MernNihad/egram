@@ -2,36 +2,73 @@
       {{#if result}}
 <div class="div m-2" style="padding: 2rem;
     background-color: #e5e9e9;">
+    {{#if result.applicationID}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Applicant number :  {{result.applicationID}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.applicant_name}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Applicant name :  {{result.applicant_name}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.address}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Addres :  {{result.address}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.Area}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Area :  {{result.Area}} </a>
     </div>
+    {{/if}}
+
+
+    {{#if result.area}}
+    <div class="application-div">
+        <a class="application-view-aTag" href="#">Area :  {{result.area}} </a>
+    </div>
+    {{/if}}
+
+    {{#if result.district}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">District :  {{result.district}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.door_no}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Door No. :  {{result.door_no}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.ward_no}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Ward No. :  {{result.ward_no}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.street_name}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Street name :  {{result.street_name}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.phone_number}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Mobile number :  {{result.phone_number}} </a>
     </div>
+    {{/if}}
+
+    {{#if result.form_type}}
     <div class="application-div">
         <a class="application-view-aTag" href="#">Service type :  {{result.form_type}} </a>
     </div>
+    {{/if}}
+
     {{#if result.pic_patta}}
     <div class="application-div">
         <label for="">Patta</label>
@@ -46,7 +83,7 @@
     {{/if}}
     {{#if result.pic_cover_letter}}
      <div class="application-div">
-        <label for="">Patta</label>
+        <label for="">Cover letter</label>
         <img src="/category-images/{{result.pic_cover_letter}}.jpg" style="width: 300px;height:200px" alt="">    
     </div>
     {{/if}}

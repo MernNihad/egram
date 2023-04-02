@@ -48,9 +48,12 @@ module.exports = {
         })
     },
 
-    getTeacher: () => {
+    //---------------------------------------------//
+    //---------------------------------------------//
+    //---------------------------------------------//
+    getAllStaff: () => {
         return new Promise(async (resolve, reject) => {
-            let categories = await db.get().collection(collection.ADMIN_ADD_TEACHER).find().toArray()
+            let categories = await db.get().collection('staff').find().toArray()
             if (categories.length > 0) {
 
                 obj = {
@@ -60,21 +63,25 @@ module.exports = {
                 resolve(obj)
             } else {
                 obj = {
-                    message:'not contents',
+                    message:'null',
                     status: false
                 }
                 resolve(obj)
             }
         })
     },
+    // -----------------------------------------
     
-    getTeacherForEdit: (this_is) => {
-        return new Promise(async (resolve, reject) => {
-            db.get().collection(collection.ADMIN_ADD_TEACHER).findOne({_id:objectId(this_is)}).then((categories)=>resolve(categories))
- 
-        })
-    },
+
+    //------------------------------//
+    //------------------------------//
+    //------------------------------//
+    getSingleStaff: (id) =>new Promise(async (resolve, reject) => db.get().collection('staff').findOne({_id:objectId(id)}).then((categories)=>resolve(categories))),
     // --------
+
+
+
+
     addQuestions: (data) => {
         return new Promise(async (resolve, reject) => {
             // let categories = await
@@ -96,14 +103,11 @@ module.exports = {
     // ---------
 
     // --------
-    addTeacher: (data) => {
+    addStaff: (data) => {
         return new Promise(async (resolve, reject) => {
-            // let categories = await
-            console.log(data.email);
-            db.get().collection(collection.ADMIN_ADD_TEACHER).findOne({ email: data.email }).then((response) => {
-                console.log(response);
+            db.get().collection('staff').findOne({ email: data.email }).then((response) => {
                 if (response==null) {
-                    db.get().collection(collection.ADMIN_ADD_TEACHER).insertOne(data).then((response) => {
+                    db.get().collection('staff').insertOne(data).then((response) => {
                         if (response.acknowledged) {
                             resolve({ status: true })
                         } else {
@@ -140,23 +144,28 @@ module.exports = {
             })
         })
     },
-    deleteStaff: (categoryID) => {
-        return new Promise((resolve, reject) => {
-            // db.get().collection(collection.CATEGORY_COLLECTION).deleteOne({ _id: objectId(categoryID) }).then((response) => {
-                db.get().collection(collection.ADMIN_ADD_TEACHER).deleteOne({ _id: objectId(categoryID) }).then((response) => {
-                    resolve(response)
-                })
-            // })
-        })
-    },
 
-    deleteTeacher: (categoryID) => {
-        return new Promise((resolve, reject) => {
-            db.get().collection(collection.CATEGORY_COLLECTION).deleteOne({ _id: objectId(categoryID) }).then((response) => {
-                resolve(true)
-            })
-        })
-    },
+
+
+    //----------------------------------//
+    //----------------------------------//
+    //----------------------------------//
+    deleteStaff: (categoryID) =>new Promise((resolve, reject) =>db.get().collection('staff').deleteOne({ _id: objectId(categoryID) }).then((response) => resolve(response))),
+    // ---------------------------------------------
+
+
+
+
+
+
+
+    // deleteStaff: (categoryID) => {
+    //     return new Promise((resolve, reject) => {
+    //         db.get().collection(collection.CATEGORY_COLLECTION).deleteOne({ _id: objectId(categoryID) }).then((response) => {
+    //             resolve(true)
+    //         })
+    //     })
+    // },
 
     
     getCategoryDetails: (CategoryID) => {
@@ -166,12 +175,35 @@ module.exports = {
             })
         })
     },
+
+
+    //---------------------------------------------------//
+    //---------------------------------------------------//
+    //---------------------------------------------------//
+
+    
+    getApplicationForTpyeFind: (type) => {
+        return new Promise(async(resolve, reject) => {
+            let result = await db.get().collection('forms').find({ form_type: type,status:'approved' }).toArray()
+                resolve(result)
+        })
+    },
+    //---------------------------------------------------//
+    
+
+
+    //---------------------------------------------------//
+    //---------------------------------------------------//
+    //---------------------------------------------------//
     getSecurityCode: () => {
         return new Promise(async(resolve, reject) => {
             let result = await db.get().collection(collection.ADMIN_SECURITY).find().toArray()
             resolve(result)
         })
     },
+    // ------------------------------------------------------//
+
+
     insertForm: (data,id,application_id,patta,document,cover_letter,signature) => {
         data.userID = id
         data.status = 'pending'
@@ -234,10 +266,17 @@ module.exports = {
     //         db.get().collection(collection.ADMIN_ADD_TEACHER).find().then((response) => resolve(response))
     //     })
     // },
-    updateTeacher: (id, data) => {
+
+
+
+
+    //---------------------------------------//
+    //---------------------------------------//
+    //---------------------------------------//
+    updateStaff: (id, data) => {
         return new Promise(async (resolve, reject) => {
             let obj
-            db.get().collection(collection.ADMIN_ADD_TEACHER).updateOne({ _id: objectId(id) },{$set:{
+            db.get().collection('staff').updateOne({ _id: objectId(id) },{$set:{
                 name:data.name,
                 email:data.email,
                 password:data.password
@@ -252,6 +291,7 @@ module.exports = {
         
         })
     },
+    // ----------------------------------------
 
 
 
@@ -267,9 +307,10 @@ module.exports = {
     },
 
 
-    // setSecurityCode
+    //---------------------------------------//
+    //---------------------------------------//
+    //---------------------------------------//
     addSecurityCode: (code) => {
-        console.log(code);
         return new Promise(async (resolve, reject) => {
             let obj
             let result =await db.get().collection(collection.ADMIN_SECURITY).find().toArray()
@@ -278,10 +319,10 @@ module.exports = {
                 db.get().collection(collection.ADMIN_SECURITY).insertOne({ code  : code }).then((res)=>resolve({status:true,message:'Successfully inserted'}))
             }else{
                 resolve({status:false,message:"already code available"})
-                
             }
         })
     },
+    // --------------------------------------------------
     
     updateCategory: (CategoryID, CategoryDetails, name) => {
         return new Promise(async (resolve, reject) => {
@@ -314,8 +355,10 @@ module.exports = {
         })
     },
 
+    //----------------------------------------//
+    //----------------------------------------//
+    //----------------------------------------//
     editSecurityCode: (code,id) => {
-        console.log(code,id);
         return new Promise(async (resolve, reject) => {
             let obj
             let result = await db.get().collection(collection.ADMIN_SECURITY).updateOne({_id:objectId(id)},{$set:{ code: code }})
@@ -324,35 +367,18 @@ module.exports = {
             }else{
                 resolve({status:false,message:'failed'})
             }
-            // if (result) {
-            //     obj = {
-            //         status: false,
-            //         response: null
-            //     }
-            //     resolve(obj)
-            // }
-            // var today = new Date();
-            // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            // var dateTime = date + ' ' + time;
-            console.log(result);
-            // db.get().collection(collection.CATEGORY_COLLECTION).updateOne({ _id: objectId(CategoryID) }, {
-            //     $set: {
-            //         name: name,
-            //         date: dateTime,
-            //     }
-            // }).then((response) => {
-            //     obj = {
-            //         status: true,
-            //         response
-            //     }
-            //     resolve(obj)
-            // })
         })
     },
+    // -------------------------------------------
 
 
-    getUserDetails: () => {
+
+
+
+    //  --------------------------------------------------------------------------------
+// | *************************************USERS************************************ |
+//  --------------------------------------------------------------------------------
+    getAllUsers: () => {
         return new Promise(async (resolve, reject) => {
             db.get().collection(collection.USER_COLLECTION).find().toArray().then((response) => {
                 let obj = {
@@ -363,6 +389,7 @@ module.exports = {
             })
         })
     },
+    // ------------------------
     addSubcategories: (data, CatID, name) => {
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -565,13 +592,18 @@ module.exports = {
             })
         })
     },
-
+    //----------------------------------//
+    //----------------------------------//
+    //----------------------------------//
     getAdminData: (id) => {
         return new Promise((resolve, reject) => {
             db.get().collection(collection.ADMIN_COLLECTION).findOne({ _id: objectId(id) }).then((response) => {
                 resolve(response)
             })
         })
+    // -------------------------------------
+
+
     },
     updateProfile: (data, id) => {
         return new Promise(async (resolve, reject) => {
@@ -740,10 +772,10 @@ module.exports = {
             }
         })
     },
-    
-    deleteServices: (categoryID) => {
+    // ---
+    deleteService: (type) => {
         return new Promise((resolve, reject) => {
-            db.get().collection('services').deleteOne({ _id: objectId(categoryID) }).then((response) => {
+            db.get().collection('services').deleteOne({ _service_type_: type }).then((response) => {
 
                 // db.get().collection(collection.SUBCATEGORY_COLLECTION).deleteMany({ category: objectId(categoryID) }).then((response) => {
                     resolve({status:true})
@@ -751,4 +783,5 @@ module.exports = {
             })
         })
     },
-}
+}   
+// -------------

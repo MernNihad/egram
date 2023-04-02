@@ -1,0 +1,34 @@
+<section>
+  <div class="container-fluid align-as-center">
+    <div class="box-shadow-forgot">
+      <div class="top-section-forgot">
+        <div>
+          <h4>Edit Security code</h4>
+        </div>
+      </div>
+        {{#if MESSAGE}}
+              {{#if MESSAGE.status}}
+                <div class="alert alert-success" role="alert">
+                  {{MESSAGE.message}}
+                </div>
+              {{else}}
+                <div class="alert alert-danger" role="alert">
+                  {{MESSAGE.message}}
+                </div>
+              {{/if}}
+            {{/if}}
+            {{#each response}}
+          <div>
+            <div>
+              <input class="email-forgot" type="number" value="{{this.code}}" placeholder="Security Code" name="security_code" required />
+            </div>
+               <div>
+              <input class="email-forgot" type="text" hidden value="{{this._id}}" placeholder="Security Code" name="this_id" />
+            </div>
+          </div>
+            {{/each}}
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

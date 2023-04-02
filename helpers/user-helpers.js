@@ -77,6 +77,9 @@ module.exports = {
       // console.log(result);
     })
   },
+  // ------------------//
+  // ------------------//
+  // ------------------//
   getServices: () => {
     return new Promise(async (resolve, reject) => {
       let data = await db.get().collection('services').find().toArray()
@@ -87,6 +90,9 @@ module.exports = {
       }
     })
   },
+  // ------------------//
+
+  
   getSubCategory: (CateId) => {
     return new Promise(async (resolve, reject) => {
       let result = await db.get().collection(collection).find({ category: objectId(CateId) }).toArray()
